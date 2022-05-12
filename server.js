@@ -5,8 +5,12 @@ const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
+const seedData = require('./models/seedData.js')
+const Drink = require('./models/schema.js')
 const db = mongoose.connection;
 require('dotenv').config()
+
+
 //___________________
 //Port
 //___________________
@@ -49,11 +53,43 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 //___________________
 // Routes
+
+///Edit
+app.get('/edit', (req,res) => {
+  Drink.findById(req.params.id, (err,data) => {
+    res.render('edit.ejs', {
+      edit: data
+    })
+  })
+})
+//Index
+app.get('/' , (req, res) => {
+  res.render('index.ejs');
+});
+
+//New
+app.get('/new', (req,res) => {
+  res.render('new.ejs')
+})
+
+//create
+app.post('/', (req,res) => {
+  Drink.create(req.body, (err, createdDrink) => {
+    res.redirect('/')
+  })
+})
+
+//delete
+app.delete('/:id', (req, res)=>{
+  Drink.findByIdAndRemove(req.params.id, (err, data)=>{
+      res.redirect('/');
+  });
+});
+
+
 //___________________
 //localhost:3000
-app.get('/' , (req, res) => {
-  res.send('Hello World!');
-});
+
 
 //___________________
 //Listener
