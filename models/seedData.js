@@ -1,9 +1,9 @@
 const seedData = [
     {
-      name: "Captain America",
-      image: "https://i.pinimg.com/474x/8d/83/69/8d8369514ff51872ab0205763a30326b.jpg",
-      about: "Modified Human",
-      origin: "Earth",
+      name: "Whisky Sour",
+      image: "https://thekitchencommunity.org/wp-content/uploads/2022/03/2_cocktail-recipes.jpg",
+      about: "The Whiskey Sour was traditionally made with whiskey, lemon juice, sugar and egg white, an ingredient that tames the tart flavor and creates a richer, smoother texture.",
+      origin: "Wisconsin",
       rating: []
       
      

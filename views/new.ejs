@@ -9,16 +9,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>New </h1>
-    <form action="/" method="POST">
-        Name: <input type="text" name="name"placeholder="Name" /><br/>
-        Image: <input type="url" name="image" placeholder="Image url"><br>
-        About: <input type="text" name="about" /><br/>
-        Origin: <input type="text" name="origin"placeholder="Origin" /><br/>
-        Rating: <input type="number" name="rating"placeholder="Rating" /><br/>
+    <h1>New Drink </h1>
+    <div class="new-container">
+    <form action="/drinks" method="POST">
+        Name: <input type="text" name="name"placeholder="Name" />
+        <br><br>
+        Image: <input type="url" name="image" placeholder="Image url">
+        <br><br>
+        About: <input type="text" name="about"placeholder="About" />
+        <br/><br>
+        Origin: <input type="text" name="origin"placeholder="Origin" /><br/><br>
+        Rating: <input type="number" name="rating"placeholder="Rating" /><br/><br>
+       <input type="submit" value="Create Drink"/>
 
-
-        <input type="submit" value="Create Drink"/>
+    </form>
+</div>
     
 </body>
 </html>

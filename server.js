@@ -44,7 +44,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 app.use(express.static('public'));
 
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
-app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
+app.use(express.urlencoded({ extended: true }));// extended: false - does not allow nested objects in query strings
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 
 //use method override
@@ -55,36 +55,76 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 
 ///Edit
-app.get('/edit', (req,res) => {
+app.get('drinks/:id/edit', (req,res) => {
   Drink.findById(req.params.id, (err,data) => {
     res.render('edit.ejs', {
-      edit: data
+      drinks: data
     })
   })
 })
+
+
+app.put('/:id', (req,res) => {
+  Drink.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedDrink) => {
+    res.redirect('/')
+  })
+})
 //Index
-app.get('/' , (req, res) => {
-  res.render('index.ejs');
+app.get('/drinks', (req, res)=>{
+  Drink.find({}, (error, allDrinks)=>{
+      res.render('index.ejs', {
+          drinks: allDrinks
+      });
+  });
 });
 
 //New
-app.get('/new', (req,res) => {
+app.get('/drinks/new', (req,res) => {
   res.render('new.ejs')
 })
 
 //create
-app.post('/', (req,res) => {
+app.post('/drinks/', (req,res) => {
   Drink.create(req.body, (err, createdDrink) => {
-    res.redirect('/')
+    res.redirect('/drinks')
   })
 })
 
 //delete
-app.delete('/:id', (req, res)=>{
+app.delete('/drinks/:id', (req, res)=>{
   Drink.findByIdAndRemove(req.params.id, (err, data)=>{
-      res.redirect('/');
+      res.redirect('/drinks');
   });
 });
+
+app.get('/seed', (req,res) => {
+  Drink.create(seedData, (err,seedData) => {
+    res.redirect('/drinks')
+  })
+})
+
+app.post('/', (req,res) => {
+  Drink.create(req.body, (err, createdDrink) => {
+    res.redirect('/drinks')
+  })
+})
+
+
+app.get('/drinks/:id', (req,res) => {
+  Drink.findById(req.params.id, (err,foundDrink) => {
+    res.render('show.ejs', {
+      drink:foundDrink
+    })
+  })
+})
+app.use('/', (req,res) => {
+  Drink.find({}, (err, allDrink) => {
+    res.render('index.ejs', {
+      drinks: allDrink
+    })
+  })
+})
+
 
 
 //___________________

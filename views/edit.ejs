@@ -8,8 +8,16 @@
     <title>Document</title>
 </head>
 <body>
+
     <h3>Edit Drink</h3>
     <a class="edit-page" href="/">Home Page</a>
+    <form action="/<%=drinks._id%>?_method=PUT" method="POST">
+    
    
+    Name: <input type="text" name="name" value="<%=drinks.name%>"/> <br/>
+    Origin: <input type="text" name="origin" value="<%=drinks.origin%>"><br>
+
+
+    <input type="submit" name="" value="Submit Modifications">
 </body>
 </html>
