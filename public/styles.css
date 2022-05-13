@@ -28,9 +28,31 @@ h1 {
 
   .new-container{
     display:flex;
-    padding: 20px;
+    padding: 50px ;
     width:200px;
-    height: 320px;
-    background:rgb(170, 170, 231);
+    margin: auto;
+    text-align: center;
+    height: 420px;
+    background:rgba(221, 221, 232, 0.315);
     
+}
+
+.content {
+  display:block;
+  flex-wrap:nowrap;
+  flex-direction: column;
+  border-radius: 20px;
+  width: 350px;
+  height: 400px;
+  border: 2px solid black;
+  margin: auto;
+  text-align: center;
+  list-style-type: none;
+ 
+}
+
+.deletebutton {
+  background-color: black;
+  color: white;
+ 
 }

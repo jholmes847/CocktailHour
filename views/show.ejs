@@ -7,16 +7,23 @@
     <link rel="stylesheet" href="/styles.css">
     <title>Document</title>
 </head>
-<body>
-    <div class="show-container">
-        <button class = "show-button" type="button" name="button"><a class ="home" href="/">Home Page</a></button>
-     
-          
-           
-             
-            
+<body>  
 
-     
+    <nav>
+        <a href="/drinks"><button>Home</button></a>
+        <a class="edit" href="/drinks/edit">Edit Drinks</a>
+      </nav>
+             <h1> <%=drink.name%></h1>
+         <div class='content'>
+           <img src=<%=drink.image%>></img>
+         <li> Origin: <%=drink.origin%></li>
+        </li>Rating: <%=drink.rating%></li>
+         </li>About: <%=drink.about%></li>
+    
+        </div>
+        <form action="/drinks/<%=drink.id%>?_method=DELETE" method="POST">
+        <button>  <i class="material-icons">delete</i></button>
+          </form>
     
 </body>
 </html>

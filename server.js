@@ -111,18 +111,21 @@ app.post('/', (req,res) => {
 
 
 app.get('/drinks/:id', (req,res) => {
-  Drink.findById(req.params.id, (err,foundDrink) => {
-    res.render('show.ejs', {
-      drink:foundDrink
+  const id = req.params.id
+  Drink.findById(id) 
+    .then((drink)=>{
+      console.log(drink)
+      res.render('show.ejs', {drink:drink})
     })
-  })
 })
-app.use('/', (req,res) => {
+ 
+app.get('/', (req,res) => {
   Drink.find({}, (err, allDrink) => {
     res.render('index.ejs', {
       drinks: allDrink
     })
   })
+  
 })
 
 
