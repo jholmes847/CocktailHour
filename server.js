@@ -55,13 +55,9 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 
 ///Edit
-app.get('drinks/:id/edit', (req,res) => {
-  Drink.findById(req.params.id, (err,allDrinks) => {
-    res.render('edit.ejs', {
-      drinks: allDrinks
-    })
-  })
-})
+app.get('/drinks/edit', (req, res)=>{
+  res.render('edit.ejs');
+});
 
 
 app.put('/:id', (req,res) => {
@@ -97,11 +93,11 @@ app.delete('/drinks/:id', (req, res)=>{
   });
 });
 
-app.get('/seed', (req,res) => {
-  Drink.create(seedData, (err,seedData) => {
-    res.redirect('/drinks')
-  })
-})
+// app.get('/seed', (req,res) => {
+//   Drink.create(seedData, (err,seedData) => {
+//     res.redirect('/drinks')
+//   })
+// })
 
 app.post('/', (req,res) => {
   Drink.create(req.body, (err, createdDrink) => {
@@ -131,10 +127,10 @@ app.get('/', (req,res) => {
 
 
 //___________________
-//localhost:3000
+// localhost:3000
 
 
 //___________________
 //Listener
 //___________________
-app.listen(PORT, () => console.log( 'Listening on port:', PORT));
+app.listen(PORT, () => console.log( 'Listening on port:', PORT))
