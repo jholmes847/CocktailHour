@@ -13,11 +13,12 @@
     
 
     <div class="container">
-        <ul class="unorder-list">
+        <ul class="list">
         <% for(let i = 0; i < drinks.length; i++){ %>
         
-        <a href="/drinks/<%=drinks[i].id%>"><img src="<%=drinks[i].image%>" class="drink-image"></a>%></li>
-      <% } %>
+       <li> <a href="/drinks/<%=drinks[i].id%>"><img src="<%=drinks[i].image%>" class="drink-image"></a>%></li>
+       <li> <a href="/drinks/<%=drinks[i].id%>"><img src="<%=drinks[i].image%>" class="drink-image"></a>%></li>
+       <% } %>
              
             </ul>
             

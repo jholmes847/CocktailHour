@@ -4,6 +4,7 @@ background-color: bisque;
 
 h1 {
     text-align: center;
+    font-size: 40px;
 }
 
 .container {
@@ -22,6 +23,7 @@ h1 {
 
   .drink-image:hover {
     filter: brightness(100%);
+   
   }
 
   ul {
@@ -33,10 +35,10 @@ h1 {
   }
 
   img {
-    width: 250px;
+    width: 300px;
     height:250px;
     border: 5px solid rgb(20, 20, 20);
-    margin: 30px;
+    margin: 10px;
   }
 
   .new-container{
@@ -70,8 +72,12 @@ h1 {
  
 }
 
+
+
 .addDrink {
  text-decoration: none;
  list-style-type: none;
  
 }
+
+

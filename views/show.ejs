@@ -8,21 +8,19 @@
     <title>Document</title>
 </head>
 <body>  
-
-    <nav>
+  <nav>
         <a href="/drinks"><button>Home</button></a>
-    </nav>
-             <h1> <%=drink.name%></h1>
-         <div class='content'>
-           <img src=<%=drink.image%>></img>
-          <br><br>
-     Origin: <%=drink.origin%> <br>
-     Rating: <%=drink.rating%><br>
-      
-     About: <%=drink.about%>
-     <br><br>
-     <nav>
-      <a class="edit" href="/drinks/edit"><i class="material-icons">Edit</i>
+  </nav>
+   <h1> <%=drink.name%></h1>
+      <div class='content'>
+          <img src=<%=drink.image%>></img>
+       <br><br>
+        Origin: <%=drink.origin%> <br>
+        Rating: <%=drink.rating%><br>
+        About: <%=drink.about%>
+       <br><br>
+    <nav>
+    <a class="edit" href="/drinks/edit"><i class="material-icons">Edit</i>
      <form action="/drinks/<%=drink.id%>?_method=DELETE" method="POST">
       <button>  <i class="material-icons">delete</i></button>
        </form>
