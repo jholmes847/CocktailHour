@@ -15,9 +15,11 @@
       <div class='content'>
           <img src=<%=drink.image%>></img>
        <br><br>
+       <ul class="show-about">
         Origin: <%=drink.origin%> <br>
         Rating: <%=drink.rating%><br>
         About: <%=drink.about%>
+      </ul>
        <br><br>
     <nav>
     <a class="edit" href="/drinks/edit"><i class="material-icons">Edit</i>
@@ -29,4 +31,5 @@
         
     
 </body>
+<%- include ('./partials/footer.ejs') %>
 </html>

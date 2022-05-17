@@ -1,5 +1,6 @@
 body {
 background-color: bisque;
+grid-template-rows: 1fr auto;
 }
 
 h1 {
@@ -15,9 +16,10 @@ h1 {
   background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/https://d1e00ek4ebabms.cloudfront.net/production/cfbafb86-b3eb-4efc-86cf-9bf893725eb1.jpg?source=next&amp;fit=scale-down&amp;quality=highest&amp;width=1067");
   
   }
+  
 
   .drink-image {
-    opacity: 0.9;
+    
     filter: brightness(50%);
   }
 
@@ -59,17 +61,18 @@ h1 {
   border-radius: 20px;
   width: 450px;
   height: 500px;
-  border: 5px dotted black;
+  border: 5px solid black;
   margin: auto;
   text-align: center;
   list-style-type: none;
+  background-image: url("https://media.istockphoto.com/photos/old-wooden-board-background-picture-id168450431?b=1&k=20&m=168450431&s=170667a&w=0&h=r7WUwKXoK_t23ptQT15UsdyZ3J-Nle7XzXVB4J0OGM0=");
  
 }
 
 .deletebutton {
   background-color: black;
   color: white;
- 
+  
 }
 
 
@@ -77,7 +80,19 @@ h1 {
 .addDrink {
  text-decoration: none;
  list-style-type: none;
+ text-align: center;
+
  
 }
 
+.footer {
+  margin-top: auto;
+  color:white;
+  font-size: 25px;
+}
 
+.show-about {
+  color: white;
+ margin: auto;
+text-align: justify;
+}
