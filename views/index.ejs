@@ -13,7 +13,7 @@
 
    
    
-        <a class="addDrink" href="/drinks/new">Add Drink</a>
+        <a class="add-button" href="/drinks/new">Add Drink</a>
 
     
 
@@ -22,7 +22,7 @@
         <% for(let i = 0; i < drinks.length; i++){ %>
         
        <li> <a href="/drinks/<%=drinks[i].id%>"><img src="<%=drinks[i].image%>" class="drink-image"></a>%></li>
-       <li> <a href="/drinks/<%=drinks[i].id%>"><img src="<%=drinks[i].image%>" class="drink-image"></a>%></li>
+       
        <% } %>
              
             </ul>
@@ -36,4 +36,6 @@
            
 </body>
 <%- include ('./partials/footer.ejs') %>
+
 </html>
+
