@@ -56,9 +56,9 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 ///Edit
 app.get('drinks/:id/edit', (req,res) => {
-  Drink.findById(req.params.id, (err,data) => {
+  Drink.findById(req.params.id, (err,allDrinks) => {
     res.render('edit.ejs', {
-      drinks: data
+      drinks: allDrinks
     })
   })
 })

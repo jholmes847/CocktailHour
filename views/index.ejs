@@ -9,18 +9,15 @@
 </head>
 <body>
     <h1>Cocktail Hour</h1>
-    <h2><a class="new" href="/drinks/new">Add Drink</a></h2>
-    <h3><a class="edit" href="/drinks/edit">Edit Drinks</a></h3> 
+    <h2><a class="addDrink" href="/drinks/new">Add Drink</a></h2>
+    
 
     <div class="container">
         <ul class="unorder-list">
         <% for(let i = 0; i < drinks.length; i++){ %>
-            <li>
-                 Name: <%=drinks[i].name%> <br>
         
-             </li>
-              <a href="/drinks/<%=drinks[i].id%>"><img src="<%=drinks[i].image%>" class="drink-image"></a>%></li>
-               <% } %>
+        <a href="/drinks/<%=drinks[i].id%>"><img src="<%=drinks[i].image%>" class="drink-image"></a>%></li>
+      <% } %>
              
             </ul>
             

@@ -11,19 +11,24 @@
 
     <nav>
         <a href="/drinks"><button>Home</button></a>
-        <a class="edit" href="/drinks/edit">Edit Drinks</a>
-      </nav>
+    </nav>
              <h1> <%=drink.name%></h1>
          <div class='content'>
            <img src=<%=drink.image%>></img>
-         <li> Origin: <%=drink.origin%></li>
-        </li>Rating: <%=drink.rating%></li>
-         </li>About: <%=drink.about%></li>
-    
+          <br><br>
+     Origin: <%=drink.origin%> <br>
+     Rating: <%=drink.rating%><br>
+      
+     About: <%=drink.about%>
+     <br><br>
+     <nav>
+      <a class="edit" href="/drinks/edit"><i class="material-icons">Edit</i>
+     <form action="/drinks/<%=drink.id%>?_method=DELETE" method="POST">
+      <button>  <i class="material-icons">delete</i></button>
+       </form>
+      </nav>
         </div>
-        <form action="/drinks/<%=drink.id%>?_method=DELETE" method="POST">
-        <button>  <i class="material-icons">delete</i></button>
-          </form>
+        
     
 </body>
 </html>
