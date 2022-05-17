@@ -1,5 +1,5 @@
 body {
-background-color: bisque;
+background-color: burlywood;
 grid-template-rows: 1fr auto;
 }
 
@@ -95,4 +95,15 @@ h1 {
   color: white;
  margin: auto;
 text-align: justify;
+}
+
+/* .edit-page {
+  
+  
+} */
+
+.head {
+  background-color: black;
+  color: white;
+  opacity: 0.3;
 }
