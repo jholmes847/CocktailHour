@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Montserrat:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
-
+    <%- include ('./partials/head.ejs') %>
     <title>Document</title>
 </head>
 <body>
     
-    <a href="/drinks"><button>Home</button></a>
+  
  
 
-    <h3>Edit Drink</h3>
+    <h1 class="edit-drink"> Edit Drink</h3>
+
     <div class="edit-page">
-    Name: <input type="text" name="name" placeholder="Name">
+    Name: <input type="text" name="name" >
     <br><br>
     Image: <input type="url" name="image" placeholder="Image url">
     <br><br>
@@ -23,11 +25,13 @@
     Rating: <input type="number" name="rating"placeholder="Rating" /><br/><br>
     About: <TEXTAREA Name="content" ROWS="5" COLS="25"></TEXTAREA>
     </TEXTAREA> 
-    <br/><br>
-   <input type="submit" value="Update Drink"/>
+    <br><br>
+    <input type="submit" value="Update Drink"/>
 </div>
   
-</body>
 
+  
+</body>
+<%- include ('./partials/footer.ejs') %>
 
 </html>

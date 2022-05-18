@@ -54,22 +54,21 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 // Routes
 
-///Edit
-app.get('/:id/edit',(req,res) => {
-  Drink.findById(req.params.id, (error,foundDrink) => {
-  res.render('edit.ejs',{
-   
-    drinks: foundDrink,
+//Edit
+app.get('/:id/edit', (req, res)=>{
+  Drink.findById(req.params.id, (err, foundDrink)=>{
+    res.render('edit.ejs', {drink: foundDrink})
   })
 })
-})
-console.log("updated")
+app.put('/:id/edit', (req, res)=>{
+  req.body
+  Drink.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedDrink)=>{
+  
+    res.redirect('/')
 
-app.put('/:id/', (req,res) => {
-  Drink.findByIdAndUpdate(req.params.id, req.body,{new:true},(error,foundDrink) => {
-    res.redirect('/drinks')
   })
 })
+
 //Index
 app.get('/drinks', (req, res)=>{
   Drink.find({}, (error, allDrinks)=>{

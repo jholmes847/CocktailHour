@@ -1,6 +1,8 @@
 body {
 background-color: burlywood;
 grid-template-rows: 1fr auto;
+ background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/https://d1e00ek4ebabms.cloudfront.net/production/cfbafb86-b3eb-4efc-86cf-9bf893725eb1.jpg?source=next&amp;fit=scale-down&amp;quality=highest&amp;width=1067");
+  
 }
 
 h1 {
@@ -50,6 +52,7 @@ h1 {
     margin: auto;
     text-align: center;
     height: 420px;
+    font-weight:bolder;
     background:rgba(221, 221, 232, 0.315);
     
 }
@@ -97,16 +100,25 @@ h1 {
  margin: auto;
 text-align: justify;
 }
-
-/* .edit-page {
+.edit-page {
+  background-image: url("https://media.istockphoto.com/photos/old-wooden-board-background-picture-id168450431?b=1&k=20&m=168450431&s=170667a&w=0&h=r7WUwKXoK_t23ptQT15UsdyZ3J-Nle7XzXVB4J0OGM0=");
+ 
+  border-radius: 20px/50px;
+  width: 250px;
+  height: 300px;
+  border: 5px solid black;
+  margin: auto;
+  padding: 45px;
+  text-align: center;
   
-  
-} */
+}
 
 .head {
   background-color: black;
   color: white;
-  opacity: 0.3;
+  opacity: 0.6;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 .add-button {
