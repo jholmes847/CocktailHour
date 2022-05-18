@@ -12,8 +12,8 @@
 <body>
     
   
- 
-
+    <form action="/drinks/<%=drink.id%>/edit?_method=put" method="POST"> 
+   
     <h1 class="edit-drink"> Edit Drink</h3>
 
     <div class="edit-page">
@@ -26,9 +26,9 @@
     About: <TEXTAREA Name="content" ROWS="5" COLS="25"></TEXTAREA>
     </TEXTAREA> 
     <br><br>
-    <input type="submit" value="Update Drink"/>
+    <input type="submit" value="update drink">
 </div>
-  
+</form>
 
   
 </body>

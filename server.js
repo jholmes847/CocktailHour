@@ -11,9 +11,7 @@ const db = mongoose.connection;
 require('dotenv').config()
 
 
-//___________________
-//Port
-//___________________
+
 // Allow use of Heroku's port or your own local port, depending on the environment
 const PORT = process.env.PORT;
 
@@ -54,20 +52,18 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 // Routes
 
-//Edit
-app.get('/:id/edit', (req, res)=>{
-  Drink.findById(req.params.id, (err, foundDrink)=>{
-    res.render('edit.ejs', {drink: foundDrink})
+// Edit
+app.get('/drinks/:id/edit', (req, res)=>{
+  Drink.findById(req.params.id, (err, data)=>{
+    console.log(data)
+    res.render('edit.ejs', 
+    {drink: data
+    })
+   
   })
 })
-app.put('/:id/edit', (req, res)=>{
-  req.body
-  Drink.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedDrink)=>{
-  
-    res.redirect('/')
 
-  })
-})
+
 
 //Index
 app.get('/drinks', (req, res)=>{
@@ -90,12 +86,7 @@ app.post('/drinks/', (req,res) => {
   })
 })
 
-//delete
-app.delete('/drinks/:id', (req, res)=>{
-  Drink.findByIdAndRemove(req.params.id, (err, data)=>{
-      res.redirect('/drinks');
-  });
-});
+
 
 // app.get('/seed', (req,res) => {
 //   Drink.create(seedData, (err,seedData) => {
@@ -114,7 +105,7 @@ app.get('/drinks/:id', (req,res) => {
   const id = req.params.id
   Drink.findById(id) 
     .then((drink)=>{
-      console.log(drink)
+      
       res.render('show.ejs', {drink:drink})
     })
 })
@@ -127,6 +118,22 @@ app.get('/', (req,res) => {
   })
   
 })
+app.put('/drinks/:id/edit', (req, res)=>{
+const id= req.params.id 
+
+  Drink.findByIdAndUpdate({_id:id},req.body,   (err, foundDrink)=>{
+res.redirect ("/")
+  
+
+  })
+})
+
+//delete
+app.delete('/drinks/:id', (req, res)=>{
+  Drink.findByIdAndRemove(req.params.id, (err, data)=>{
+      res.redirect('/drinks');
+  });
+});
 
 
 
