@@ -17,14 +17,15 @@
     <h1 class="edit-drink"> Edit Drink</h3>
 
     <div class="edit-page">
-    Name: <input type="text" name="name" >
+        Name: <input type="text" name="name" value="<%=drink.name%>"><br>
     <br><br>
-    Image: <input type="url" name="image" placeholder="Image url">
+    Image: <input type="url" name="image" value="<%=drink.image%>">
     <br><br>
-    Origin: <input type="text" name="origin"placeholder="Origin" /><br/><br>
-    Rating: <input type="number" name="rating"placeholder="Rating" /><br/><br>
+    Origin: <input type="text" name="origin"value="<%=drink.origin%>"><br/><br>
+    Rating: <input type="number" name="rating"value="<%=drink.rating%>"><br/><br>
     About: <TEXTAREA Name="content" ROWS="5" COLS="25"></TEXTAREA>
-    </TEXTAREA> 
+</TEXTAREA> 
+<br><br>
     <br><br>
     <input type="submit" value="update drink">
 </div>
